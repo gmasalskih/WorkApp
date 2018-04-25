@@ -1,0 +1,16 @@
+{
+  "gcparentidname": "Название родительской группы",
+  "gcid": "ID",
+  "gcname": "Название",
+  "gcparentid": "Родитель",
+  "creatorid": "Создатель",
+  "gcdesc": "Описание",
+  "grkind": "Вид группы",
+  "catalogmaindataname": "Системное сообщение",
+  "filterdata": "Значение поля",
+  "datasource": "Значение поля",
+  "insertobjid": "Элемент",
+  "insertobjtype": "Элемент",
+  "viewaccess": "Доступ на просмотр",
+  "manageaccess": "Доступ на управление"
+}

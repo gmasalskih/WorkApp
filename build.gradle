@@ -1,0 +1,44 @@
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.2.40'
+    ext.retrofit_version = '2.4.+'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile 'org.apache.poi:poi-ooxml:3.17'
+    compile "io.reactivex.rxjava2:rxjava:2.+"
+    compile "io.reactivex.rxjava2:rxjavafx:2.+"
+    compile 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    compile ("com.squareup.retrofit2:retrofit:$retrofit_version"){
+        exclude module: 'okhttp'
+    }
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.okhttp3:okhttp:3.10.0"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
