@@ -82,3 +82,8 @@ fun XSSFCell.getCellValue(): String {
     this.setCellType(CellType.STRING)
     return this.stringCellValue
 }
+
+fun XSSFRow.setNextCellValue(value: String): XSSFRow{
+    this.createLastCell().setCellValue(value)
+    return this
+}

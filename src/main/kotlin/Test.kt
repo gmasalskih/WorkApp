@@ -15,9 +15,9 @@ fun main(args: Array<String>) {
                 Pair(it.getListCell()[0].getCellValue(), it.getListCell()[1].getCellValue())
             }.distinct()
             .forEach {
-                val r = sheet.createLastRow()
-                r.createLastCell().setCellValue(it.first)
-                r.createLastCell().setCellValue(it.second)
+                sheet.createLastRow()
+                        .setNextCellValue(it.first)
+                        .setNextCellValue(it.second)
             }
     wb.writeToFile(PATCH_OUT, FILE_NAME_OUT)
 
